@@ -2,14 +2,17 @@ serafimjp@nbk-debian:~$ history
 
 sudo apt install gnome --no-install-recommends
 sudo reboot
+
 sudo apt install git
-sudo apt install npm
-sudo npm install -g sass
+
+git init
 git config --global user.name "serafimjp"
 git config --global user.email "joaopauloserafim@gmail.com"
+
 top
+
 sudo apt update
-sudo apt install vim apache2 mariadb-server
+
 sudo apt install docker.io
 sudo systemctl start docker
 sudo systemctl enable docker
@@ -17,7 +20,11 @@ docker --version
 sudo docker run hello-world
 sudo docker image ls
 sudo docker container ls
+
+sudo docker run debian
 sudo docker run -it debian bash
+
+sudo apt install vim apache2 mariadb-server
 
 root@acf48cbeb9a3:/# history
 
