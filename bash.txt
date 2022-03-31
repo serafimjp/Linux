@@ -1,7 +1,11 @@
 serafimjp@nbk-debian:~$ history
 
+// Gnome
+
 sudo apt install gnome --no-install-recommends
 sudo reboot
+
+// Git
 
 sudo apt install git
 
@@ -9,9 +13,7 @@ git init
 git config --global user.name "serafimjp"
 git config --global user.email "joaopauloserafim@gmail.com"
 
-top
-
-sudo apt update
+// Docker
 
 sudo apt install docker.io
 sudo systemctl start docker
@@ -24,27 +26,39 @@ sudo docker container ls
 sudo docker run debian
 sudo docker run -it debian bash
 
-sudo apt install vim apache2 mariadb-server
-
 root@acf48cbeb9a3:/# history
 
-cat /etc/issue
-apt update
+// Zabbix
+
 apt install vim wget apache2 mariadb-server
+
 /etc/init.d/apache2 start
 /etc/init.d/mariadb start
+
 ip addr show
+
 wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-1+debian11_all.deb
-ls
 dpkg -i zabbix-release_6.0-1+debian11_all.deb
-apt update
+
 apt install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-sql-scripts zabbix-agent
-mysql -uroot -p
+
+# mysql -uroot -p
+password
+
+mysql> create database zabbix character set utf8mb4 collate utf8mb4_bin;
+mysql> create user zabbix@localhost identified by 'password';
+mysql> grant all privileges on zabbix.* to zabbix@localhost;
+mysql> quit;
+
 zcat /usr/share/doc/zabbix-sql-scripts/mysql/server.sql.gz | mysql -uzabbix -p zabbix
+
 vim /etc/zabbix/zabbix_server.conf
+DBPassword=password
+
 /etc/init.d/zabbix-server restart
 /etc/init.d/zabbix-agent restart
 /etc/init.d/apache2 restart
+
 apt install locales
 dpkg-reconfigure locales
 /etc/init.d/apache2 restart
