@@ -1,0 +1,43 @@
+serafimjp@nbk-debian:~$ history
+
+sudo apt install gnome --no-install-recommends
+sudo reboot
+sudo apt install git
+sudo apt install npm
+sudo npm install -g sass
+git config --global user.name "serafimjp"
+git config --global user.email "joaopauloserafim@gmail.com"
+top
+sudo apt update
+sudo apt install vim apache2 mariadb-server
+sudo apt install docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
+docker --version
+sudo docker run hello-world
+sudo docker image ls
+sudo docker container ls
+sudo docker run -it debian bash
+
+root@acf48cbeb9a3:/# history
+
+cat /etc/issue
+apt update
+apt install vim wget apache2 mariadb-server
+/etc/init.d/apache2 start
+/etc/init.d/mariadb start
+ip addr show
+wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-1+debian11_all.deb
+ls
+dpkg -i zabbix-release_6.0-1+debian11_all.deb
+apt update
+apt install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-sql-scripts zabbix-agent
+mysql -uroot -p
+zcat /usr/share/doc/zabbix-sql-scripts/mysql/server.sql.gz | mysql -uzabbix -p zabbix
+vim /etc/zabbix/zabbix_server.conf
+/etc/init.d/zabbix-server restart
+/etc/init.d/zabbix-agent restart
+/etc/init.d/apache2 restart
+apt install locales
+dpkg-reconfigure locales
+/etc/init.d/apache2 restart
