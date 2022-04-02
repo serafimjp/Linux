@@ -1,4 +1,4 @@
-serafimjp@nbk-debian:~$ history
+# history
 
 // Gnome
 
