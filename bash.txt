@@ -19,6 +19,7 @@ sudo apt install docker.io
 sudo systemctl start docker
 sudo systemctl enable docker
 docker --version
+
 sudo docker run hello-world
 sudo docker image ls
 sudo docker container ls
@@ -30,6 +31,8 @@ root@acf48cbeb9a3:/# history
 
 // Zabbix
 
+apt-update
+
 apt install vim wget apache2 mariadb-server
 
 /etc/init.d/apache2 start
@@ -39,6 +42,8 @@ ip addr show
 
 wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-1+debian11_all.deb
 dpkg -i zabbix-release_6.0-1+debian11_all.deb
+
+apt-update
 
 apt install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-sql-scripts zabbix-agent
 
