@@ -27,42 +27,40 @@ sudo docker container ls
 sudo docker run debian
 sudo docker run -it debian bash
 
-root@acf48cbeb9a3:/# history
-
 // Zabbix
 
-apt-update
-
-apt install vim wget apache2 mariadb-server
+sudo apt install wget apache2 mariadb-server
 
 /etc/init.d/apache2 start
 /etc/init.d/mariadb start
 
 ip addr show
 
-wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-1+debian11_all.deb
-dpkg -i zabbix-release_6.0-1+debian11_all.deb
+sudo wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-1+debian11_all.deb
+sudo dpkg -i zabbix-release_6.0-1+debian11_all.deb
+sudo apt-update
+sudo apt install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-sql-scripts zabbix-agent
 
-apt-update
+{ DB
 
-apt install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-sql-scripts zabbix-agent
-
-# mysql -uroot -p
+sudo mysql -uroot -p
 password
-
 mysql> create database zabbix character set utf8mb4 collate utf8mb4_bin;
 mysql> create user zabbix@localhost identified by 'password';
 mysql> grant all privileges on zabbix.* to zabbix@localhost;
 mysql> quit;
 
-zcat /usr/share/doc/zabbix-sql-scripts/mysql/server.sql.gz | mysql -uzabbix -p zabbix
+}
 
-vim /etc/zabbix/zabbix_server.conf
-DBPassword=password
+sudo zcat /usr/share/doc/zabbix-sql-scripts/mysql/server.sql.gz | mysql -uzabbix -p zabbix
+sudo gedit /etc/zabbix/zabbix_server.conf
 
-/etc/init.d/zabbix-server restart
-/etc/init.d/zabbix-agent restart
-/etc/init.d/apache2 restart
+Linha 129 > descomentar e inserir a senha (DBPassword=password)
+
+sudo systemctl restart zabbix-server zabbix-agent apache2
+sudo systemctl enable zabbix-server zabbix-agent apache2
+
+http://server_ip_or_name/zabbix
 
 apt install locales
 dpkg-reconfigure locales
