@@ -1,4 +1,4 @@
-serafimjp@nbk-debian:~$ history
+# history
 
 // Gnome
 
@@ -8,10 +8,9 @@ sudo reboot
 // Git
 
 sudo apt install git
-
-git init
-git config --global user.name "serafimjp"
-git config --global user.email "joaopauloserafim@gmail.com"
+sudo git init
+sudo git config --global user.name "serafimjp"
+sudo git config --global user.email "joaopauloserafim@gmail.com"
 
 // Docker
 
