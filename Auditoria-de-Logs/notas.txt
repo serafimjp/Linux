@@ -1,0 +1,3 @@
+VM webserver-audit > ssh suporte@172.16.0.11
+VM graylog-audit > ssh suporte@172.16.0.12
+VM kibana-audit > ssh suporte@172.16.0.13
