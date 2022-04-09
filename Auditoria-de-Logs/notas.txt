@@ -1,3 +1,9 @@
-VM webserver-audit > ssh suporte@172.16.0.11
-VM graylog-audit > ssh suporte@172.16.0.12
-VM kibana-audit > ssh suporte@172.16.0.13
+VMs
+
+webserver-audit > ssh suporte@172.16.0.11
+graylog-audit > ssh suporte@172.16.0.12
+kibana-audit > ssh suporte@172.16.0.13
+
+# Teste de Conhecimento
+
+Introdução ao Sistema de Logs > Nota mais alta: 10,00 / 10,00.
